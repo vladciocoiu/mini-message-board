@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="title"><%= title %></h1>
+    <a href="/new">Send a message</a>
+
+    <div class="messages">
+      <% messages.slice().reverse().forEach(msg => { %>
+      <div class="message">
+        <p class="message-text"><%= msg.text %></p>
+        <p class="message-author"><%= msg.user %></p>
+        <p class="message-date"><%= `${msg.added.toDateString()}, ${msg.added.toLocaleTimeString()}` %></p>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
